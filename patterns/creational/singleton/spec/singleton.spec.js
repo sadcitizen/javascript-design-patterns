@@ -22,4 +22,8 @@ describe('Синглтон / Singleton', function () {
     it('Метода toString должен существовать', function () {
         expect(secondIns.toString).to.exist;
     });
+
+    it('Метод toString должен вернуть [object Singleton]', function () {
+        expect(secondIns.toString()).to.equal('[object Singleton]');
+    });
 });
