@@ -12,7 +12,7 @@ var ClosureSingleton = new function () {
 
     // Приватные методы и свойства
     function _privateMethod() {
-
+        //
     }
 
     // Публичные методы

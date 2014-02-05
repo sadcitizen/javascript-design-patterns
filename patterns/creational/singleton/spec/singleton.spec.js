@@ -33,10 +33,6 @@ describe('Синглтон / Singleton', function () {
         before(function () {
             firstIns = new ClosureSingleton();
             secondIns = new ClosureSingleton();
-
-            /*firstIns.toString = function() {
-                return '[object Singleton]';
-            };*/
         });
 
         it('Метод, возвращающий инстанс синглтона должен существовать', function () {
