@@ -1,4 +1,4 @@
-var Singleton = (function () {
+var StaticSingleton = (function () {
     var instance;
 
     function createInstance() {
