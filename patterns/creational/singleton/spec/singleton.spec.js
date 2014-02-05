@@ -1,6 +1,13 @@
-describe('Singleton', function () {
+describe('Синглтон / Singleton', function () {
 
-    it('simple test', function () {
-        expect('hello').to.be.a('string');
+    var firstIns, secondIns;
+
+    before(function () {
+        firstIns = Singleton.getInstance();
+        secondIns = Singleton.getInstance();
+    });
+
+    it('Обе переменные ссылаются на один и тот же объект', function () {
+        expect(firstIns).to.equal(secondIns);
     });
 });
