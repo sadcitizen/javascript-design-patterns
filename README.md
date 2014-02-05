@@ -1,26 +1,28 @@
-# Javascript Design Patterns
+# Javascript Design Patterns (Черновик)
 
 ### Реализация на javascript шаблонов проектирования
 
 1. Порождающие шаблоны / Creational patterns
     + [Абстрактная фабрика / Abstract factory] (#)
+    + [Объектный пул / Object pool] (#)
+    + [Отложенная инициализация / Lazy initialization] (#)
+    + [Прототип / Prototype] (#)
     + [Синглтон / Одиночка / Singleton] (#)
     + [Строитель / Builder] (#)
-    + [Прототип / Prototype] (#)
     + [Фабричный метод / Factory method] (#)
 2. Структурные шаблоны / Structural patterns
     + [Адаптер / Adapter] (#)
-    + [Декоратор / Decorator] (#)
-    + [Заместитель / Proxy] (#)
+    + [Декоратор / Decorator или Оболочка / Wrapper] (#)
+    + [Заместитель / Proxy или Суррогат / Surrogate] (#)
     + [Компоновщик / Composite] (#)
     + [Мост / Bridge] (#)
     + [Приспособленец / Flyweight] (#)
     + [Фасад / Facade] (#)
 3. Поведенческие шаблоны / Behavioral patterns
     + [Интерпретатор / Interpreter] (#)
-    + [Итератор / Iterator] (#)
-    + [Команда / Command] (#)
-    + [Наблюдатель / Observer] (#)
+    + [Итератор / Iterator или Курсор / Cursor] (#)
+    + [Команда / Command, Действие / Action или Транзакция / Transaction] (#)
+    + [Наблюдатель / Observer / Publisher-Subscriber] (#)
     + [Посетитель / Visitor] (#)
     + [Посредник / Mediator] (#)
     + [Состояние / State] (#)
