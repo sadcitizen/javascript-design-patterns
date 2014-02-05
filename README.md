@@ -30,3 +30,10 @@
     + [Хранитель / Memento] (#)
     + [Цепочка обязаностей / Chain of Responsibility] (#)
     + [Шаблонный метод / Template Method] (#)
+4. Прочие - отсортировать
+    + Модуль / Module
+    + Пространство имен / Namespace
+    + Примесь / Mixin
+    + Реестр / Registry
+    + Репозиторий / Repository
+    + Единая точка входа / Front Controller
