@@ -1,9 +1,11 @@
-var StaticSingleton = (function () {
+var ClosureStaticSingleton = (function () {
     var instance;
+
+    // Приватные методы
 
     function createInstance() {
         return {
-            // Функциональность синглтона
+            // Публичные методы
         };
     }
 

@@ -1,8 +1,8 @@
-var ClosureSingleton = new function () {
+var ClosureConstructorSingleton = new function () {
     var instance;
 
     // Конструктор
-    function ClosureSingleton() {
+    function ClosureConstructorSingleton() {
         if (!instance) {
             instance = this;
         } else {
@@ -16,9 +16,9 @@ var ClosureSingleton = new function () {
     }
 
     // Публичные методы
-    ClosureSingleton.prototype.toString = function () {
-        return '[object ClosureSingleton]';
+    ClosureConstructorSingleton.prototype.toString = function () {
+        return '[object ClosureConstructorSingleton]';
     };
 
-    return ClosureSingleton;
+    return ClosureConstructorSingleton;
 };

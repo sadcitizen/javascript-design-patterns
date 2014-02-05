@@ -4,16 +4,16 @@ describe('Синглтон / Singleton', function () {
 
     describe('Экземпляр хранится в замыкании, инстанс создается статическим методом', function () {
         before(function () {
-            firstIns = StaticSingleton.getInstance();
-            secondIns = StaticSingleton.getInstance();
+            firstIns = ClosureStaticSingleton.getInstance();
+            secondIns = ClosureStaticSingleton.getInstance();
 
             firstIns.toString = function() {
-                return '[object StaticSingleton]';
+                return '[object ClosureStaticSingleton]';
             };
         });
 
         it('Метод, возвращающий инстанс синглтона должен существовать', function () {
-            expect(StaticSingleton.getInstance).to.exist;
+            expect(ClosureStaticSingleton.getInstance).to.exist;
         });
 
         it('Обе переменные ссылаются на один и тот же объект', function () {
@@ -24,19 +24,19 @@ describe('Синглтон / Singleton', function () {
             expect(secondIns.toString).to.exist;
         });
 
-        it('Метод toString должен вернуть [object Singleton]', function () {
-            expect(secondIns.toString()).to.equal('[object StaticSingleton]');
+        it('Метод toString должен вернуть [object ClosureStaticSingleton]', function () {
+            expect(secondIns.toString()).to.equal('[object ClosureStaticSingleton]');
         });
     });
 
     describe('Экземпляр хранится в замыкании, инстанс создается конструктором', function () {
         before(function () {
-            firstIns = new ClosureSingleton();
-            secondIns = new ClosureSingleton();
+            firstIns = new ClosureConstructorSingleton();
+            secondIns = new ClosureConstructorSingleton();
         });
 
         it('Метод, возвращающий инстанс синглтона должен существовать', function () {
-            expect(ClosureSingleton).to.be.a('function');
+            expect(ClosureConstructorSingleton).to.be.a('function');
         });
 
         it('Обе переменные ссылаются на один и тот же объект', function () {
@@ -47,19 +47,19 @@ describe('Синглтон / Singleton', function () {
             expect(secondIns.toString).to.exist;
         });
 
-        it('Метод toString должен вернуть [object ClosureSingleton]', function () {
-            expect(secondIns.toString()).to.equal('[object ClosureSingleton]');
+        it('Метод toString должен вернуть [object ClosureConstructorSingleton]', function () {
+            expect(secondIns.toString()).to.equal('[object ClosureConstructorSingleton]');
         });
     });
 
     describe('Экземпляр хранится в статическом свойстве, инстанс создается конструктором', function () {
         before(function () {
-            firstIns = new NewSingleton();
-            secondIns = new NewSingleton();
+            firstIns = new StaticConstructorSingleton();
+            secondIns = new StaticConstructorSingleton();
         });
 
         it('Метод, возвращающий инстанс синглтона должен существовать', function () {
-            expect(NewSingleton).to.be.a('function');
+            expect(StaticConstructorSingleton).to.be.a('function');
         });
 
         it('Обе переменные ссылаются на один и тот же объект', function () {
@@ -70,8 +70,8 @@ describe('Синглтон / Singleton', function () {
             expect(secondIns.toString).to.exist;
         });
 
-        it('Метод toString должен вернуть [object NewSingleton]', function () {
-            expect(secondIns.toString()).to.equal('[object NewSingleton]');
+        it('Метод toString должен вернуть [object StaticConstructorSingleton]', function () {
+            expect(secondIns.toString()).to.equal('[object StaticConstructorSingleton]');
         });
     });
 });
