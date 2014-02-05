@@ -1,9 +1,12 @@
 var ClosureStaticSingleton = (function () {
     var instance;
 
-    // Приватные методы
-
     function createInstance() {
+        // Приватные методы
+        function _privateMethod () {
+
+        }
+
         return {
             // Публичные методы
         };
