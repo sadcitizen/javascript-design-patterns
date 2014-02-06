@@ -1,0 +1,1 @@
+# Декоратор / Decorator или Оболочка / Wrapper
