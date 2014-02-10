@@ -12,6 +12,9 @@ var TodoList = (function () {
             this._todos[title] = text;
         }
 
+        /**
+         * Метод возвращает ссылку на сам объект. В этом вся магия
+         * */
         return this;
     };
 
