@@ -22,7 +22,7 @@
     + Интерпретатор / Interpreter
     + [Итератор / Iterator или Курсор / Cursor] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/behavioral/iterator)
     + Команда / Command, Действие / Action или Транзакция / Transaction
-    + Наблюдатель / Observer / Publisher-Subscriber
+    + [Наблюдатель / Observer / Publisher-Subscriber] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/behavioral/observer)
     + Посетитель / Visitor
     + Посредник / Mediator
     + Состояние / State
