@@ -37,4 +37,3 @@
     + Реестр / Registry
     + Репозиторий / Repository
     + Единая точка входа / Front Controller
-    + Сцепление / Цепочка / Chaining
