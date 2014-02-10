@@ -28,7 +28,7 @@
     + Состояние / State
     + [Стратегия / Strategy] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/behavioral/strategy)
     + Хранитель / Memento
-    + Цепочка обязаностей / Chain of Responsibility
+    + [Цепочка обязаностей / Chain of Responsibility] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/behavioral/chain-of-responsibility)
     + Шаблонный метод / Template Method
 4. Прочие - отсортировать
     + Модуль / Module
