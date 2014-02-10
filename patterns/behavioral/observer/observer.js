@@ -6,6 +6,7 @@ var Observer = (function () {
 
     Observer.prototype.subscribe = function (handler) {
         this._handlers.push(handler);
+        return this;
     };
 
     Observer.prototype.unsubscribe = function (handler) {
@@ -14,9 +15,11 @@ var Observer = (function () {
         for (; i < length; i++) {
             if (this._handlers[i] === handler) {
                 this._handlers.splice(i, 1);
-                return;
+                break;
             }
         }
+
+        return this;
     };
 
     Observer.prototype.publish = function (data) {
@@ -25,6 +28,13 @@ var Observer = (function () {
         for (; i < length; i++) {
             this._handlers[i](data);
         }
+
+        return this;
+    };
+
+    Observer.prototype.reset = function () {
+        this._handlers = [];
+        return this;
     };
 
     return Observer;
