@@ -1,53 +1,56 @@
-var Iterator = function (items) {
-    this._cursor = 0;
-    this._items = items;
-};
+var Iterator = (function () {
 
-Iterator.prototype = {
-    current: function () {
+    function Iterator(items) {
+        this._cursor = 0;
+        this._items = items;
+    }
+
+    Iterator.prototype.current = function () {
         return this._items[this._cursor];
-    },
+    };
 
-    first: function () {
+    Iterator.prototype.first = function () {
         this.reset();
         return this.current();
-    },
+    };
 
-    next: function () {
+    Iterator.prototype.next = function () {
         if (this.hasNext()) {
             this._cursor++;
             return this.current();
         }
-    },
+    };
 
-    previous: function () {
+    Iterator.prototype.previous = function () {
         if (this.hasPrevious()) {
             this._cursor--;
             return this.current();
         }
-    },
+    };
 
-    last: function () {
+    Iterator.prototype.last = function () {
         this._cursor = this._items.length - 1;
         return this.current();
-    },
+    };
 
-    reset: function () {
+    Iterator.prototype.reset = function () {
         this._cursor = 0;
-    },
+    };
 
-    hasNext: function () {
+    Iterator.prototype.hasNext = function () {
         return this._cursor < this._items.length;
-    },
+    };
 
-    hasPrevious: function () {
+    Iterator.prototype.hasPrevious = function () {
         return this._cursor > 0;
-    },
+    };
 
-    each: function (callback) {
+    Iterator.prototype.each = function (callback) {
         var item = this.first();
         for(; this.hasNext(); item = this.next()) {
             callback(item);
         }
-    }
-};
+    };
+
+    return Iterator;
+})();
