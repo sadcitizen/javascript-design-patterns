@@ -6,6 +6,8 @@
     + Абстрактная фабрика / Abstract factory
     + Объектный пул / Object pool
     + Отложенная инициализация / Lazy initialization
+    + Примесь / Mixin
+    + Пространство имен / Namespace
     + Прототип / Prototype
     + [Синглтон / Одиночка / Singleton] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/creational/singleton)
     + Строитель / Builder
@@ -25,6 +27,8 @@
     + [Наблюдатель / Observer / Publisher-Subscriber] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/behavioral/observer)
     + Посетитель / Visitor
     + Посредник / Mediator
+    + Реестр / Registry
+    + Репозиторий / Repository
     + Состояние / State
     + [Стратегия / Strategy] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/behavioral/strategy)
     + Хранитель / Memento
@@ -32,8 +36,4 @@
     + Шаблонный метод / Template Method
 4. Прочие - отсортировать
     + Модуль / Module
-    + Пространство имен / Namespace
-    + Примесь / Mixin
-    + Реестр / Registry
-    + Репозиторий / Repository
     + Единая точка входа / Front Controller
