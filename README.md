@@ -12,15 +12,15 @@
     + Фабричный метод / Factory method
 2. Структурные шаблоны / Structural patterns
     + Адаптер / Adapter
-    + [Декоратор / Decorator или Оболочка / Wrapper
+    + Декоратор / Decorator или Оболочка / Wrapper
     + Заместитель / Proxy или Суррогат / Surrogate
     + Компоновщик / Composite
     + Мост / Bridge
     + Приспособленец / Flyweight
-    + [Фасад / Facade] (#)
+    + Фасад / Facade
 3. Поведенческие шаблоны / Behavioral patterns
     + Интерпретатор / Interpreter
-    + [Итератор / Iterator или Курсор / Cursor] (#)
+    + [Итератор / Iterator или Курсор / Cursor] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/behavioral/iterator)
     + Команда / Command, Действие / Action или Транзакция / Transaction
     + Наблюдатель / Observer / Publisher-Subscriber
     + Посетитель / Visitor
