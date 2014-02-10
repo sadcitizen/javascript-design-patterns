@@ -1,1 +1,2 @@
 # Наблюдатель / Observer / Publisher-Subscriber
+
