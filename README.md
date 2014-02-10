@@ -12,7 +12,7 @@
     + Фабричный метод / Factory method
 2. Структурные шаблоны / Structural patterns
     + Адаптер / Adapter
-    + Декоратор / Decorator или Оболочка / Wrapper
+    + [Декоратор / Decorator или Оболочка / Wrapper] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/structural/decorator)
     + Заместитель / Proxy или Суррогат / Surrogate
     + Компоновщик / Composite
     + Мост / Bridge
