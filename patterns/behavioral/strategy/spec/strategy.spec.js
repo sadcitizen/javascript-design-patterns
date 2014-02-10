@@ -13,6 +13,7 @@ describe('Стратегия / Strategy', function () {
         });
 
         it('Методы', function () {
+            expect(calc.add).to.be.a('function');
             expect(calc.set).to.be.a('function');
             expect(calc.execute).to.be.a('function');
         });
@@ -21,19 +22,21 @@ describe('Стратегия / Strategy', function () {
     describe('Поведение', function () {
 
         it('Calculator.execute', function () {
-            expect(calc.execute('add', 4, 5)).to.equal(9);
-            expect(calc.execute('subtract', 4, 5)).to.equal(-1);
-            expect(calc.execute('multiply', 4, 5)).to.equal(20);
-            expect(calc.execute('divide', 40, 5)).to.equal(8);
+            expect(calc.set('add').execute(4, 5)).to.equal(9);
+            expect(calc.set('subtract').execute(4, 5)).to.equal(-1);
+            expect(calc.set('multiply').execute(4, 5)).to.equal(20);
+            expect(calc.set('divide').execute(40, 5)).to.equal(8);
         });
 
-        it('Calculator.set', function () {
+        it('Calculator.add', function () {
 
-            calc.set('pow', function(x, y) {
-                return Math.pow(x, y);
-            });
+            calc
+                .add('pow', function(x, y) {
+                    return Math.pow(x, y);
+                })
+                .set('pow');
 
-            expect(calc.execute('pow', 15, 2)).to.equal(225);
+            expect(calc.execute(15, 2)).to.equal(225);
 
         });
 

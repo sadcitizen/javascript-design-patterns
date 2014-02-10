@@ -6,6 +6,11 @@ var Calculator = (function () {
     function Calculator() {
 
         /**
+         * Метод, который будет выполнять стратегия по умолчанию
+         * */
+        this._method = 'add';
+
+        /**
          * Встроенные алгоритмы
          * */
         this._methods = {
@@ -30,16 +35,22 @@ var Calculator = (function () {
     /**
      * Метод, который позволяет добавить новый метод в калькулятор
      * */
-    Calculator.prototype.set = function (name, method) {
+    Calculator.prototype.add = function (name, method) {
         if (this._methods[name] === undefined) {
             this._methods[name] = method;
         }
+
+        return this;
     };
 
-    Calculator.prototype.execute = function (name, x, y) {
-        if (this._methods[name]) {
-            return this._methods[name](x, y);
-        }
+    Calculator.prototype.set = function (name) {
+        this._method = name;
+
+        return this;
+    };
+
+    Calculator.prototype.execute = function (x, y) {
+        return this._methods[this._method](x, y);
     };
 
     return Calculator;
