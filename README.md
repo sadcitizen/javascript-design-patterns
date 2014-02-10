@@ -26,7 +26,7 @@
     + Посетитель / Visitor
     + Посредник / Mediator
     + Состояние / State
-    + Стратегия / Strategy
+    + [Стратегия / Strategy] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/behavioral/strategy)
     + Хранитель / Memento
     + Цепочка обязаностей / Chain of Responsibility
     + Шаблонный метод / Template Method
