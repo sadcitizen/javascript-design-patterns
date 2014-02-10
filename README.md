@@ -7,7 +7,7 @@
     + Объектный пул / Object pool
     + Отложенная инициализация / Lazy initialization
     + Прототип / Prototype
-    + [Синглтон / Одиночка / Singleton] (#)
+    + [Синглтон / Одиночка / Singleton] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/creational/singleton)
     + Строитель / Builder
     + Фабричный метод / Factory method
 2. Структурные шаблоны / Structural patterns
