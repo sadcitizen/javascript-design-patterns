@@ -17,7 +17,7 @@
     + Компоновщик / Composite
     + Мост / Bridge
     + Приспособленец / Flyweight
-    + Фасад / Facade
+    + [Фасад / Facade] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/structural/facade)
 3. Поведенческие шаблоны / Behavioral patterns
     + Интерпретатор / Interpreter
     + [Итератор / Iterator или Курсор / Cursor] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/behavioral/iterator)
