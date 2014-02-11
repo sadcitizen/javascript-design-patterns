@@ -6,7 +6,6 @@
     + Абстрактная фабрика / Abstract factory
     + Объектный пул / Object pool
     + Отложенная инициализация / Lazy initialization
-    + Примесь / Mixin
     + Пространство имен / Namespace
     + Прототип / Prototype
     + [Синглтон / Одиночка / Singleton] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/creational/singleton)
@@ -18,6 +17,7 @@
     + Заместитель / Proxy или Суррогат / Surrogate
     + Компоновщик / Composite
     + Мост / Bridge
+    + [Примесь / Mixin] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/structural/mixin)
     + Приспособленец / Flyweight
     + [Фасад / Facade] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/structural/facade)
 3. Поведенческие шаблоны / Behavioral patterns
