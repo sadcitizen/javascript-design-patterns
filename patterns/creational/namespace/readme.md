@@ -31,7 +31,6 @@ Namespace.create(App, 'keys', {
 });
 
 console.log(App.keys.TAB); // => 9
-
 ```
 
 [Хорошая статья о пространстве имен от Владимира Кузнецова] (http://noteskeeper.ru/264/)
