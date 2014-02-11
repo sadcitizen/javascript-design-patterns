@@ -49,7 +49,7 @@ Namespace.create(App, 'entities.user', function () {
 });
 
 var user = new App.entities.user('Козьма Прутков');
-user.introduce(); // => 'Козьма Прутков'
+user.introduce(); // => 'Привет, меня зовут Козьма Прутков'
 ```
 
 #### Ссылки
