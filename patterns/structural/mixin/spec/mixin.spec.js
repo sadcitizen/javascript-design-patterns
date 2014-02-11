@@ -1,1 +1,5 @@
+describe('Примесь / Mixin', function () {
 
+
+
+});
