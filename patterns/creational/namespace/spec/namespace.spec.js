@@ -19,6 +19,7 @@ describe('Пространство имен / Namespace', function () {
 
             expect(Namespace.create(App, 'modules.login')).to.equal(App.modules.login);
             expect(Namespace.create(App.modules, 'logout')).to.equal(App.modules.logout);
+            expect(Namespace.create(App, 'modules')).to.equal(App.modules);
             expect(Namespace.create(App.modules.logout, 'success', {})).to.equal(App.modules.logout.success);
             expect(Namespace.create(App, 'modules.logout.fail', {})).to.equal(App.modules.logout.fail);
         });

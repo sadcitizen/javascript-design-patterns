@@ -6,6 +6,20 @@ var Namespace = (function () {
     function Namespace() {
     }
 
+    function getUnit(unit) {
+
+        var types = {
+            'function': function () {
+                return new unit();
+            },
+            'object': function () {
+                return unit;
+            }
+        };
+
+        return types[typeof unit] ? types[typeof unit]() : undefined;
+    }
+
     /**
      * Метод, который создает неймспейс
      * @param target {object} объект приложения, в котором создается неймспейс
@@ -19,19 +33,8 @@ var Namespace = (function () {
             current = target;
 
         for (; i < length; i++) {
-            if (current[parts[i]] === undefined) {
-                current[parts[i]] = {};
-            }
+            current[parts[i]] = current[parts[i]] || ( i === length - 1 && getUnit(unit)) || {};
             current = current[parts[i]];
-        }
-
-        //TODO: Избавиться от _.extend()
-        if (typeof unit === 'function') {
-            _.extend(current, new unit());
-        }
-
-        if (typeof unit === 'object') {
-            _.extend(current, unit);
         }
 
         return current;
