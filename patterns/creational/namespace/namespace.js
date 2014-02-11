@@ -15,9 +15,9 @@ var Namespace = (function () {
             'object': function () {
                 return unit;
             }
-        };
+        }, type = typeof unit;
 
-        return types[typeof unit] ? types[typeof unit]() : undefined;
+        return types[type] ? types[type]() : undefined;
     }
 
     /**
