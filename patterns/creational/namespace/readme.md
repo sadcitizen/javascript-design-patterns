@@ -33,4 +33,7 @@ Namespace.create(App, 'keys', {
 console.log(App.keys.TAB); // => 9
 ```
 
-[Хорошая статья о пространстве имен от Владимира Кузнецова] (http://noteskeeper.ru/264/)
+#### Ссылки
+
++ [Пространство имен в YUI3] (http://yuilibrary.com/yui/docs/api/classes/YUI.html#method_namespace)
++ [Статья от Владимира Кузнецова] (http://noteskeeper.ru/264/)
