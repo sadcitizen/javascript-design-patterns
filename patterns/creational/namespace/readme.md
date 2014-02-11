@@ -12,7 +12,7 @@ var App = App || {};
 Namespace.create(App, 'modules.login');
 ```
 
-Создать неймспейс с кодами клавиш `App.keys`:
+Создать неймспейс с объектом, который хранит коды клавиш `App.keys`:
 
 ```js
 Namespace.create(App, 'keys', {
@@ -31,6 +31,25 @@ Namespace.create(App, 'keys', {
 });
 
 console.log(App.keys.TAB); // => 9
+```
+
+Создать неймспейс с функцией-фабрикой
+
+```js
+Namespace.create(App, 'entities.user', function () {
+    function User(name) {
+        this._name = name;
+    }
+
+    User.prototype.introduce = function () {
+        console.log('Привет, меня зовут ' + this._name);
+    };
+
+    return User;
+});
+
+var user = new App.entities.user('Козьма Прутков');
+user.introduce(); // => 'Козьма Прутков'
 ```
 
 #### Ссылки

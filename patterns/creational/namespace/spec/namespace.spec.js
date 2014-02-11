@@ -34,18 +34,23 @@ describe('Пространство имен / Namespace', function () {
         it('Создание неймспейсов с функциями-фабриками', function () {
             var FnApp = FnApp || {};
 
-            expect(Namespace.create(FnApp, 'modules.login', function () {
-                return {
-                    foo: 'bar',
-                    hello: function () {
-                        return 'world'
-                    }
-                };
-            })).to.equal(FnApp.modules.login);
+            expect(Namespace.create(FnApp, 'entities.user', function () {
+                function User(name) {
+                    this._name = name;
+                }
 
-            expect(FnApp.modules.login).to.have.property('foo');
-            expect(FnApp.modules.login).to.have.property('hello');
-            expect(FnApp.modules.login.hello).to.be.a('function');
+                User.prototype.introduce = function () {
+                    return 'Привет, меня зовут ' + this._name;
+                };
+
+                return User;
+            })).to.equal(FnApp.entities.user);
+
+            var user = new FnApp.entities.user('Козьма Прутков');
+
+            expect(user).to.be.instanceOf(FnApp.entities.user);
+            expect(user.introduce).to.be.a('function');
+            expect(user.introduce()).to.equal('Привет, меня зовут Козьма Прутков');
         });
 
     });
