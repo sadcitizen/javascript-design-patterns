@@ -10,7 +10,7 @@
     + Прототип / Prototype
     + [Синглтон / Одиночка / Singleton] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/creational/singleton)
     + Строитель / Builder
-    + Фабричный метод / Factory method
+    + [Фабричный метод / Factory method] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/creational/factory-method)
 2. Структурные шаблоны / Structural patterns
     + Адаптер / Adapter
     + [Декоратор / Decorator или Оболочка / Wrapper] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/structural/decorator)
