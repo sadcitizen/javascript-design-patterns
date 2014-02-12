@@ -3,7 +3,7 @@
 ### Реализация на javascript шаблонов проектирования
 
 1. Порождающие шаблоны / Creational patterns
-    + Абстрактная фабрика / Abstract factory
+    + [Абстрактная фабрика / Abstract factory] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/creational/abstract-factory)
     + Объектный пул / Object pool
     + Отложенная инициализация / Lazy initialization
     + [Пространство имен / Namespace] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/creational/namespace)
