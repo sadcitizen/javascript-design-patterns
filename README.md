@@ -16,7 +16,7 @@
     + [Декоратор / Decorator или Оболочка / Wrapper] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/structural/decorator)
     + Заместитель / Proxy или Суррогат / Surrogate
     + Компоновщик / Composite
-    + Модуль / Module
+    + [Модуль / Module] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/structural/module)
     + Мост / Bridge
     + [Примесь / Mixin] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/structural/mixin)
     + Приспособленец / Flyweight
