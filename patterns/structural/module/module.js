@@ -106,7 +106,6 @@ var calculatorReleaving = (function () {
      * Открытие доступа
      * */
     return {
-        abs: abs,
         add: add,
         subtract: subtract,
         multiply: multiply,
