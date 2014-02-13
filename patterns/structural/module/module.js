@@ -3,12 +3,10 @@
  * Модуль в виде литерала объекта
  * */
 var calculatorLiteral = {
-
     /**
      * Локальной области видимости нет,
      * потому нет возможности создавать приватные свойтсва
      * */
-
     add: function (x, y) {
         return x + y;
     },
@@ -32,11 +30,9 @@ var calculatorLiteral = {
  *  Модуль в виде объекта, который возвращает функция
  * */
 var calculatorFunc = (function () {
-
     /**
      * Приватные свойства
      * */
-
     function abs(value) {
         return value > 0 ? value : -value;
     }
@@ -133,7 +129,6 @@ var calculatorCtor = (function () {
     /**
      * Приватные свойства
      * */
-
     var PI = 3.1415926;
 
     function abs(value) {
@@ -143,7 +138,6 @@ var calculatorCtor = (function () {
     /**
      * Публичные свойства вносятся в прототип
      * */
-
     Calculator.prototype.add = function (x, y) {
         return x + y;
     };
