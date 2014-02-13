@@ -47,7 +47,21 @@ var Branch = (function () {
 
     Branch.prototype.getName = function() {
         return this._name;
-    }
+    };
+
+    Branch.prototype.print = function() {
+        var names = [],
+            i = 0,
+            length = this._children.length;
+
+        if (length) {
+            for (; i < length; i++) {
+                names.push(this._children[i].getName());
+            }
+        }
+
+        return this._name + ' -> [' + names.join(', ') + ']';
+    };
 
     return Branch;
 })();
