@@ -37,3 +37,4 @@
     + Шаблонный метод / Template Method
 4. Прочие - отсортировать
     + Единая точка входа / Front Controller
+    + Sandbox / Песочница
