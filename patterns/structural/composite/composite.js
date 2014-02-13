@@ -10,6 +10,8 @@ var Branch = (function () {
 
     Branch.prototype.addChild = function (child) {
         this._children.push(child);
+
+        return this;
     };
 
     Branch.prototype.removeChild = function (child) {
@@ -42,11 +44,15 @@ var Branch = (function () {
     };
 
     Branch.prototype.hasChildren = function() {
-        return this._children.length > 0;
+        return this.getChildrenCount() > 0;
     };
 
     Branch.prototype.getName = function() {
         return this._name;
+    };
+
+    Branch.prototype.getChildrenCount = function () {
+        return this._children.length;
     };
 
     Branch.prototype.print = function() {
