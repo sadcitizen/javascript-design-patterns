@@ -41,7 +41,13 @@ var SingletonRegistry = (function () {
 
     var _instance, _storage;
 
-    // Конструктор
+    /**
+     * Дополнительно в конструктор можно передать
+     * какое то значение по умолчанию, которое
+     * отдавалось бы в случае обращения по
+     * несуществующему ключу. В нашем же варианте
+     * будет возвращаться undefined
+     * */
     function Registry() {
         if (!_instance) {
             _storage = {};
@@ -71,6 +77,12 @@ var SingletonRegistry = (function () {
     Registry.prototype.has = function (key) {
         return _storage[key] !== undefined;
     };
+
+    /**
+     * В качестве дополнительного функционала можно добавить
+     * метод reset() для очистки данных репозитория и
+     * метод remove() для удаления какого конкретного значения
+     * */
 
     return Registry;
 })();
