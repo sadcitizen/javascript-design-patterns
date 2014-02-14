@@ -35,7 +35,7 @@
     + [Цепочка обязаностей / Chain of Responsibility] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/behavioral/chain-of-responsibility)
     + Шаблонный метод / Template Method
 4. Шаблоны корпоративных приложений / Enterprise patterns
-    + Реестр / Registry
+    + [Реестр / Registry] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/enterprise/registry)
 5. Прочие - отсортировать
     + Единая точка входа / Front Controller
     + Sandbox / Песочница
