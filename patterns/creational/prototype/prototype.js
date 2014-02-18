@@ -1,4 +1,3 @@
-//TODO: Довести до ума
 /**
  * Базовый класс
  * */
@@ -19,46 +18,27 @@ var Person = (function () {
 /**
  * Прототип
  * */
-var PersonProto = (function () {
+var Proto = (function () {
 
     function Proto (person) {
         this.person = person;
     }
 
     Proto.prototype.clone = function() {
-        var p = new Person();
-
-        p.firstname = this.person.firstname;
-        p.lastname = this.person.lastname;
-
-        return p;
+        var f = function () {};
+        f.prototype = this.person;
+        return new f();
     };
 
     return Proto;
 })();
 
 /**
- * Клонирующий
- * */
-var Cloner = (function (){
-
-    function Cloner (obj, proto) {
-        this.obj = obj;
-        this.proto = proto;
-    }
-
-    Cloner.prototype.create = function (){
-        var cl = new this.proto(this.obj);
-        return cl.clone();
-    }
-
-    return Cloner;
-})();
-
-/**
  * Использование:
- * var john = new Person('John', 'Smith');
- * var cl = new Cloner(john, PersonProto);
- * var johnClone = cl.create();
+ * var john = new Person('John', 'Smith'),
+ *     johnPrototype = new Proto(john),
+ *     johnClone = johnPrototype.clone();
+ *
+ * console.log(johnClone.introduce());
  * johnClone будет клоном объекта john
  * */
