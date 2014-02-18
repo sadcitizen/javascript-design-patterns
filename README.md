@@ -7,7 +7,7 @@
     + Объектный пул / Object pool
     + Отложенная инициализация / Lazy initialization
     + [Пространство имен / Namespace] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/creational/namespace)
-    + Прототип / Prototype
+    + [Прототип / Prototype] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/creational/prototype)
     + [Синглтон / Одиночка / Singleton] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/creational/singleton)
     + Строитель / Builder
     + Фабричный метод / Factory method
