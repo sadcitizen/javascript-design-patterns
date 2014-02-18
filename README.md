@@ -12,7 +12,7 @@
     + Строитель / Builder
     + Фабричный метод / Factory method
 2. Структурные шаблоны / Structural patterns
-    + Адаптер / Adapter
+    + [Адаптер / Adapter] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/structural/adapter)
     + [Декоратор / Decorator или Оболочка / Wrapper] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/structural/decorator)
     + [Заместитель / Proxy или Суррогат / Surrogate] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/structural/proxy)
     + [Компоновщик / Composite] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/structural/composite)
