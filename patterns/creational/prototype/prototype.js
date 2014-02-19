@@ -20,12 +20,13 @@ var Person = (function () {
  * */
 var Proto = (function () {
 
-    function Proto (person) {
+    function Proto(person) {
         this.person = person;
     }
 
-    Proto.prototype.clone = function() {
-        var f = function () {};
+    Proto.prototype.clone = function () {
+        var f = function () {
+        };
         f.prototype = this.person;
         return new f();
     };
