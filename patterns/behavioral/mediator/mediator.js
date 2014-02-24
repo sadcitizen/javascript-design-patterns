@@ -45,9 +45,10 @@ var Mediator = (function () {
      *
      * @this {Mediator}
      * @param {string} channel Канал, обработчики которого будут удалены
+     * @param {boolean} withNested Логическое поле, которое позволяет отключить обработчики каналов-потомков
      * @return {object} Ссылка на объект-медиатор для цепочки вызовов
      */
-    Mediator.prototype.off = function(channel) {
+    Mediator.prototype.off = function(channel, withNested) {
 
         return this;
     };
