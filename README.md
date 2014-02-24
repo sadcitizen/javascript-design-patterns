@@ -26,7 +26,6 @@
     + [Наблюдатель / Observer / Publisher-Subscriber] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/behavioral/observer)
     + Посетитель / Visitor
     + Посредник / Mediator
-    + Репозиторий / Repository
     + Состояние / State
     + [Стратегия / Strategy] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/behavioral/strategy)
     + [Хранитель / Memento] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/behavioral/memento)
@@ -34,6 +33,7 @@
     + Шаблонный метод / Template Method
 4. Шаблоны корпоративных приложений / Enterprise patterns
     + [Реестр / Registry] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/enterprise/registry)
+    + Репозиторий / Repository
 5. Прочие - отсортировать
     + Единая точка входа / Front Controller
     + Sandbox / Песочница
