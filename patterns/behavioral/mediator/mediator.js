@@ -8,13 +8,17 @@ var Mediator = (function () {
      * handlers - обработчики этого канала
      * nested - вложенные каналы
      * */
-    var handlers = {};
+    var handlers = {},
+        sep;
 
     /**
      * @constructor
      * */
-    function Mediator () {
-
+    function Mediator (separator) {
+        /**
+         * По умолчанию неймспейсы будут разделены двоеточием
+         * */
+        sep = separator || ':';
     }
 
     /**
@@ -27,6 +31,8 @@ var Mediator = (function () {
      * @return {object} Ссылка на объект-медиатор для цепочки вызовов
      * */
     Mediator.prototype.on = function (channel, handler, context) {
+
+        debugger;
 
         return this;
     };
@@ -45,6 +51,7 @@ var Mediator = (function () {
 
     /**
      * @this {Mediator}
+     * @param {object} data Объект с данными, который будет передан в качестве аргумента в обработчики
      * @return {object} Ссылка на объект-медиатор для цепочки вызовов
      */
     Mediator.prototype.broadcast = function(data) {
@@ -76,9 +83,29 @@ var Mediator = (function () {
         return this;
     };
 
+    /**
+     * Функция для управления пространством имен обработчиков
+     *
+     * @this {Mediator}
+     * @param {string} channel Канал
+     * @return {object} current Хранилище обработчиков канала
+     * */
+    Mediator.prototype.namespace = function(channel, unit) {
+        var parts = channel.split(sep),
+            length = parts.length,
+            i = 0,
+            current = handlers;
+
+        for (; i < length; i++) {
+            current[parts[i]] = current[parts[i]] || ( i === length - 1 && unit) || {};
+            current = current[parts[i]];
+        }
+
+        return current;
+    }
+
     return Mediator;
 })();
-
 
 /**
  * Пример использования
@@ -92,7 +119,13 @@ m.on('hello', function (data) {
     console.log('Эти данные пришли из медиатора: ' + data.name);
 }, this);
 
+m.on('hello:world', function(data) {
+    console.log('Эти данные пришли из медиатора: ' + data.name);
+});
+
+
 /**
  * Вызываем обработчик
  * */
-m.trigger('hello', { name: 'Аполлинария Лаодикийский' });
+m.trigger('hello', { name: 'Аполлинарий Лаодикийский' });
+m.trigger('hello:world', { name: 'Вильгельм фон Каульбах' });
