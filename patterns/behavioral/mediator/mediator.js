@@ -5,8 +5,8 @@ var Mediator = (function () {
     /**
      * Хранилище каналов.
      * Канал представляет собой объект с двумя свойствами:
-     * handlers - обработчики этого канала
-     * nested - вложенные каналы
+     * handlers {array} - обработчики этого канала (fn {function} и context {object})
+     * nested {object} - вложенные каналы
      * */
     var handlers = {},
         sep;
@@ -32,7 +32,10 @@ var Mediator = (function () {
      * */
     Mediator.prototype.on = function (channel, handler, context) {
 
-        debugger;
+        this.namespace(channel).handlers.push({
+            fn: handler,
+            context: context
+        });
 
         return this;
     };
@@ -90,14 +93,14 @@ var Mediator = (function () {
      * @param {string} channel Канал
      * @return {object} current Хранилище обработчиков канала
      * */
-    Mediator.prototype.namespace = function(channel, unit) {
+    Mediator.prototype.namespace = function (channel) {
         var parts = channel.split(sep),
             length = parts.length,
             i = 0,
             current = handlers;
-
+        //TODO: Допилить
         for (; i < length; i++) {
-            current[parts[i]] = current[parts[i]] || ( i === length - 1 && unit) || {};
+            current[parts[i]] = current[parts[i]] || (i === length - 1 && { nested: {}, handlers: {}});
             current = current[parts[i]];
         }
 
