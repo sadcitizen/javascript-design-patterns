@@ -8,7 +8,7 @@ var Mediator = (function () {
      * handlers {array} - обработчики этого канала (fn {function} и context {object})
      * nested {object} - вложенные каналы
      * */
-    var handlers = {},
+    var storage = {},
         sep;
 
     /**
@@ -98,15 +98,37 @@ var Mediator = (function () {
         var parts = channel.split(sep),
             length = parts.length,
             i = 0,
-            current = handlers;
-        //TODO: Допилить
+            current = storage;
+
+        /**
+         * Возвращает объект заданной структуры
+         *
+         * @return {object}
+         * */
+        function getUnit() {
+            return {
+                nested: {},
+                handlers: []
+            }
+        }
+
         for (; i < length; i++) {
-            current[parts[i]] = current[parts[i]] || (i === length - 1 && { nested: {}, handlers: {}});
-            current = current[parts[i]];
+            current[parts[i]] = current[parts[i]] || getUnit();
+            current = (i !== length - 1 ? current[parts[i]].nested : current[parts[i]]);
         }
 
         return current;
     }
+
+    /**
+     * Возвращает содержимое объекта с обработчиками. Только для отладки.
+     *
+     * @this {Mediator}
+     * @return {object} storage Хранилище обработчиков
+     * */
+    Mediator.prototype.getStorage = function() {
+        return storage;
+    };
 
     return Mediator;
 })();
@@ -127,9 +149,39 @@ m.on('hello:world', function(data) {
     console.log('Эти данные пришли из медиатора: ' + data.name);
 });
 
+m.on('hello:world', function(data) {
+    console.log('Эти данные пришли из медиатора: ' + data.name);
+});
+
+m.on('hello:another:world', function(data) {
+    console.log('Эти данные пришли из медиатора: ' + data.name);
+});
+
+m.on('goodbye', function(data) {
+    console.log('Эти данные пришли из медиатора: ' + data.name);
+});
+
+m.on('goodbye:world', function(data) {
+    console.log('Эти данные пришли из медиатора: ' + data.name);
+});
+
+m.on('goodbye:another:world', function(data) {
+    console.log('Эти данные пришли из медиатора: ' + data.name);
+});
+
+m.on('lorem:ipsum:dolor:sit:amet', function(data) {
+    console.log('Эти данные пришли из медиатора: ' + data.name);
+});
+
+m.on('lorem:ipsum', function(data) {
+    console.log('Эти данные пришли из медиатора: ' + data.name);
+});
+
 
 /**
  * Вызываем обработчик
  * */
 m.trigger('hello', { name: 'Аполлинарий Лаодикийский' });
 m.trigger('hello:world', { name: 'Вильгельм фон Каульбах' });
+
+console.log(m.getStorage());
