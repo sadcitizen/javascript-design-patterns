@@ -63,11 +63,15 @@ var Mediator = (function () {
     };
 
     /**
+     * Запускает все обработчики и передает в них данные data
+     *
      * @this {Mediator}
      * @param {object} data Объект с данными, который будет передан в качестве аргумента в обработчики
      * @return {object} Ссылка на объект-медиатор для цепочки вызовов
      */
     Mediator.prototype.broadcast = function(data) {
+
+
 
         return this;
     };
