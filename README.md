@@ -25,7 +25,7 @@
     + Команда / Command, Действие / Action или Транзакция / Transaction
     + [Наблюдатель / Observer / Publisher-Subscriber] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/behavioral/observer)
     + Посетитель / Visitor
-    + Посредник / Mediator
+    + [Посредник / Mediator | Без тестов] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/behavioral/mediator)
     + Состояние / State
     + [Стратегия / Strategy] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/behavioral/strategy)
     + [Хранитель / Memento] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/behavioral/memento)
