@@ -118,6 +118,18 @@ var Mediator = (function () {
      * */
     Mediator.prototype.has = function (channel) {
         if (!channel.length) return false;
+        var parts = channel.split(sep),
+            length = parts.length,
+            i = 0,
+            current = storage;
+
+        for (; i < length; i++) {
+            if (current[parts[i]] !== undefined) {
+                current = current[parts[i]].nested;
+            } else {
+                return false;
+            }
+        }
 
         return true;
     };
@@ -214,7 +226,7 @@ m.on('lorem:ipsum', function(data) {
     console.log('Эти данные пришли из медиатора второй раз: lorem:ipsum -> ' + data.name);
 });
 
-m.off('lorem:ipsum:dolor', true);
+m.off('lorem:ipsum:dolor');
 
 /**
  * Вызываем обработчик
