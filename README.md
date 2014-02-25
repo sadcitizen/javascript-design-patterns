@@ -39,3 +39,4 @@
     + Sandbox / Песочница
     + Объектный пул / Object pool
     + Отложенная инициализация / Lazy initialization
+    + Запрос-Ответ / Request-Response

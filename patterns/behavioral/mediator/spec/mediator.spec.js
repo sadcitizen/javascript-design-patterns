@@ -36,12 +36,12 @@ m.on('lorem:ipsum:dolor:sit:amet', function(data) {
     console.log('Эти данные пришли из медиатора: lorem:ipsum:dolor:sit:amet -> ' + data.name);
 });
 
-m.on('lorem:ipsum', function(data) {
-    console.log('Эти данные пришли из медиатора: lorem:ipsum -> ' + data.name);
+m.on('lorem:lorem', function(data) {
+    console.log('Эти данные пришли из медиатора: lorem:lorem -> ' + data.name);
 });
 
 m.on('lorem:ipsum', function(data) {
-    console.log('Эти данные пришли из медиатора второй раз: lorem:ipsum -> ' + data.name);
+    console.log('Эти данные пришли из медиатора: lorem:ipsum -> ' + data.name);
 });
 
 m.off('lorem:ipsum:dolor');
@@ -55,14 +55,13 @@ m.trigger('hello:world', { name: 'Вильгельм фон Каульбах' })
  m.trigger('', { name: 'Фридрих Ницше' });
  m.trigger('', { name: 'Иммануил Кант' });
  m.trigger('', { name: 'Анри Пуанкаре' });
- m.trigger('', { name: 'Эварист Галуа' });
- m.trigger('', { name: 'Карл Вейерштрасс' });*/
+ m.trigger('', { name: 'Эварист Галуа' });*/
 m.trigger('hello:another:world', { name: 'Якоб Бернулли' });
 m.trigger('goodbye', { name: 'Жан Даламбер' });
 m.trigger('goodbye:world', { name: 'Алан Тьюринг' });
 m.trigger('goodbye:another:world', { name: 'Норберт Винер' });
 m.trigger('lorem:ipsum:dolor:sit:amet', { name: 'Александр Ляпунов' });
 m.trigger('lorem:ipsum', { name: 'Артур Шопенгауэр' });
-
+m.trigger('lorem:lorem', { name: 'Карл Вейерштрасс' });
 
 console.log(m.getStorage());
