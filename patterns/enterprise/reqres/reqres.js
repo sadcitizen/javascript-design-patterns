@@ -75,3 +75,47 @@ var RequestResponse = (function () {
 
     return Reqres;
 })();
+
+/**
+ * Сервер
+ * */
+var Server = (function () {
+
+    /**
+     * @param {RequestResponse} reqres Экзампляр хранителя запросов
+     * @constructor
+     */
+    function Server(reqres) {
+        this._reqres = reqres;
+
+        /**
+         * Задаем обработчики запросов
+         * */
+        this._reqres
+            .setResponse('add', function (data) {
+                return data.x + data.y;
+            })
+            .setResponse('subtract', function (data) {
+                return data.x - data.y;
+            })
+            .setResponse('multiply', function (data) {
+                return data.x * data.y;
+            })
+            .setResponse('divide', function (data) {
+                return data.x / data.y;
+            });
+    }
+
+    return Server;
+})();
+
+/**
+* Пример использования
+* */
+var reqres = new RequestResponse(),
+    server = new Server(reqres);
+
+console.log('Add: ' + reqres.request('add', { x: 22, y: 3 })); // => 25
+console.log('Subtract: ' + reqres.request('subtract', { x: 4, y: 3 })); // => 1
+console.log('Multiply: ' + reqres.request('multiply', { x: 9, y: 8 })); // => 72
+console.log('Divide: ' + reqres.request('divide', { x: 192, y: 3 })); // => 64
