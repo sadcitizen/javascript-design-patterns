@@ -34,9 +34,9 @@
 4. Шаблоны корпоративных приложений / Enterprise patterns
     + [Реестр / Registry] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/enterprise/registry)
     + Репозиторий / Repository
+    + Запрос/Ответ / Request/Response
 5. Прочие - отсортировать
     + Единая точка входа / Front Controller
     + Sandbox / Песочница
     + Объектный пул / Object pool
     + Отложенная инициализация / Lazy initialization
-    + Запрос-Ответ / Request-Response
