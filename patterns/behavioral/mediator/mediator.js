@@ -23,12 +23,11 @@ var Mediator = (function () {
 
     /**
      * Добавляет подписчик в медиатор
-     *
      * @this {Mediator}
      * @param {string} channel Канал, на который подписывается обработчик
      * @param {function} handler Обработчик
      * @param {object} context Контекст выполнения обработчика
-     * @return {object} Ссылка на объект-медиатор для цепочки вызовов
+     * @returns {object} Ссылка на объект-медиатор для цепочки вызовов
      * */
     Mediator.prototype.on = function (channel, handler, context) {
         if (channel.length) {
@@ -43,11 +42,10 @@ var Mediator = (function () {
 
     /**
      * Удаляет подписчики из медиатора
-     *
      * @this {Mediator}
      * @param {string} channel Канал, обработчики которого будут удалены
      * @param {boolean} withNested Логическое поле, которое позволяет отключить обработчики каналов-потомков
-     * @return {object} Ссылка на объект-медиатор для цепочки вызовов
+     * @returns {object} Ссылка на объект-медиатор для цепочки вызовов
      */
     Mediator.prototype.off = function(channel, withNested) {
         if (this.has(channel)) {
@@ -64,11 +62,10 @@ var Mediator = (function () {
 
     /**
      * Вызывает обработчики для конкретного канала с передачей в них данных
-     *
      * @this {Mediator}
      * @param {string} channel Канал, обработчики которого будут вызваны
      * @param {object} data Объект с данными, который будет передан в качестве аргумента в обработчики
-     * @return {object} Ссылка на объект-медиатор для цепочки вызовов
+     * @returns {object} Ссылка на объект-медиатор для цепочки вызовов
      */
     Mediator.prototype.trigger = function(channel, data) {
         if (this.has(channel)) {
@@ -89,9 +86,8 @@ var Mediator = (function () {
 
     /**
      * Удаление все обработчиков из медиатора
-     *
      * @this {Mediator}
-     * @return {object} Ссылка на объект-медиатор для цепочки вызовов
+     * @returns {object} Ссылка на объект-медиатор для цепочки вызовов
      */
     Mediator.prototype.clean = function (){
         storage = {};
@@ -100,11 +96,9 @@ var Mediator = (function () {
 
     /**
      * Проверка существования определенного неймспейса
-     *
      * @this {Mediator}
      * @param {string} channel Канал, который будет проверяться на наличие
-     * @return {boolean} Истина/ложь
-     *
+     * @returns {boolean} Истина/ложь
      * */
     Mediator.prototype.has = function (channel) {
         if (!channel.length) return false;
@@ -126,10 +120,9 @@ var Mediator = (function () {
 
     /**
      * Функция для управления пространством имен обработчиков
-     *
      * @this {Mediator}
      * @param {string} channel Канал
-     * @return {object} current Хранилище обработчиков канала
+     * @returns {object} current Хранилище обработчиков канала
      * */
     Mediator.prototype.namespace = function (channel) {
         var parts = channel.split(sep),
@@ -140,7 +133,7 @@ var Mediator = (function () {
         /**
          * Возвращает объект заданной структуры
          *
-         * @return {object}
+         * @returns {object}
          * */
         function getUnit() {
             return {
@@ -159,9 +152,8 @@ var Mediator = (function () {
 
     /**
      * Возвращает содержимое объекта с обработчиками. Только для отладки.
-     *
      * @this {Mediator}
-     * @return {object} storage Хранилище обработчиков
+     * @returns {object} storage Хранилище обработчиков
      * */
     Mediator.prototype.getStorage = function() {
         return storage;

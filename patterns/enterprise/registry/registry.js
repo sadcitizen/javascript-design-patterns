@@ -3,30 +3,38 @@
  * */
 var SimpleRegistry = (function () {
 
+    /**
+     * Создает экземпляр
+     * @constructor
+     */
     function Registry() {
-        /**
-         * Место, где будут храниться записи
-         * */
+        /** Место, где будут храниться записи */
         this._storage = {};
     }
 
     /**
-     * Внесение записи в реестр
-     * */
+     * Вносит запись в реестр
+     * @param {string} key Ключ записи реестра
+     * @param {*} value Значение записи реестра
+     */
     Registry.prototype.set = function (key, value) {
         this._storage[key] = value;
     };
 
     /**
-     * Получение значения записи из реестра
-     * */
+     * Возвращает запись из реестра по ключу
+     * @param {string} key Ключ записи реестра
+     * @returns {*} Значение записи реестра
+     */
     Registry.prototype.get = function (key) {
         return this._storage[key];
     };
 
     /**
-     * Проверка существования записи в реестре
-     * */
+     * Проверяет существование записи в реестре
+     * @param {string} key Ключ записи в реестре
+     * @returns {boolean} Истина/ложь
+     */
     Registry.prototype.has = function (key) {
         return this._storage[key] !== undefined;
     };
@@ -42,12 +50,9 @@ var SingletonRegistry = (function () {
     var _instance, _storage;
 
     /**
-     * Дополнительно в конструктор можно передать
-     * какое то значение по умолчанию, которое
-     * отдавалось бы в случае обращения по
-     * несуществующему ключу. В нашем же варианте
-     * будет возвращаться undefined
-     * */
+     * Создает экземпляр реестра-синглтона
+     * @constructor
+     */
     function Registry() {
         if (!_instance) {
             _storage = {};
@@ -56,24 +61,37 @@ var SingletonRegistry = (function () {
             return _instance;
         }
     }
+    /**
+     * Дополнительно в конструктор можно передать
+     * какое то значение по умолчанию, которое
+     * отдавалось бы в случае обращения по
+     * несуществующему ключу. В нашем же варианте
+     * будет возвращаться undefined
+     * */
 
     /**
-     * Внесение записи в реестр
-     * */
+     * Вносит запись в реестр
+     * @param {string} key Ключ записи реестра
+     * @param {*} value Значение записи реестра
+     */
     Registry.prototype.set = function (key, value) {
         _storage[key] = value;
     };
 
     /**
-     * Получение значения записи из реестра
-     * */
+     * Возвращает запись из реестра по ключу
+     * @param {string} key Ключ записи реестра
+     * @returns {*} Значение записи реестра
+     */
     Registry.prototype.get = function (key) {
         return _storage[key];
     };
 
     /**
-     * Проверка существования записи в реестре
-     * */
+     * Проверяет существование записи в реестре
+     * @param {string} key Ключ записи в реестре
+     * @returns {boolean} Истина/ложь
+     */
     Registry.prototype.has = function (key) {
         return _storage[key] !== undefined;
     };
