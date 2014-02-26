@@ -129,19 +129,47 @@ var Client = (function () {
     }
 
     /**
-     * Выполняет группу запросов
+     * Возвращает результат запроса на сложение двух чисел
+     * @param {number} x Первый операнд
+     * @param {number} y Второй операнд
+     * @returns {*} Результат запроса
      */
-    Client.prototype.run = function () {
-        console.log('Add: ' + this._reqres.request('add', { x: 22, y: 3 })); // => 25
-        console.log('Subtract: ' + this._reqres.request('subtract', { x: 4, y: 3 })); // => 1
-        console.log('Multiply: ' + this._reqres.request('multiply', { x: 9, y: 8 })); // => 72
-        console.log('Divide: ' + this._reqres.request('divide', { x: 192, y: 3 })); // => 64
+    Client.prototype.add = function(x, y) {
+        return this._reqres.request('add', { x: x, y: y });
+    };
+
+    /**
+     * Возвращает результат запроса на вычитание двух чисел
+     * @param {number} x Уменьшаемое
+     * @param {number} y Вычитаемое
+     * @returns {*} Результат запроса
+     */
+    Client.prototype.subtract = function(x, y) {
+        return this._reqres.request('subtract', { x: x, y: y });
+    };
+
+    /**
+     * Возвращает результат запроса на умножение двух чисел
+     * @param {number} x Первый операнд
+     * @param {number} y Второй операнд
+     * @returns {*} Результат запроса
+     */
+    Client.prototype.multiply = function(x, y) {
+        return this._reqres.request('multiply', { x: x, y: y });
+    };
+
+    /**
+     * Возвращает результат запроса на деление двух чисел
+     * @param {number} x Делимое
+     * @param {number} y Делитель
+     * @returns {*} Результат запроса
+     */
+    Client.prototype.divide = function(x, y) {
+        return this._reqres.request('divide', { x: x, y: y });
     };
 
     return Client;
 })();
-
-
 
 /**
 * Пример использования
@@ -150,4 +178,7 @@ var reqres = new RequestResponse(),
     server = new Server(reqres),
     client = new Client(reqres);
 
-client.run();
+console.log(client.add(4, 5));
+console.log(client.subtract(21, 3));
+console.log(client.multiply(16, 15));
+console.log(client.divide(222, 2));
