@@ -3,9 +3,18 @@
  * */
 var Namespace = (function () {
 
+    /**
+     * Создает экземпляр
+     * @constructor
+     */
     function Namespace() {
     }
 
+    /**
+     * Возвращает блок пространства имен
+     * @param {object|function} unit Блок
+     * @returns {*}
+     */
     function getUnit(unit) {
 
         var types = {
