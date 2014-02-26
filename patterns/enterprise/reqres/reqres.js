@@ -170,15 +170,3 @@ var Client = (function () {
 
     return Client;
 })();
-
-/**
-* Пример использования
-* */
-var reqres = new RequestResponse(),
-    server = new Server(reqres),
-    client = new Client(reqres);
-
-console.log(client.add(4, 5));
-console.log(client.subtract(21, 3));
-console.log(client.multiply(16, 15));
-console.log(client.divide(222, 2));
