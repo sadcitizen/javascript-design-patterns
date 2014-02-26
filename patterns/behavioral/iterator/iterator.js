@@ -11,13 +11,15 @@ var Iterator = (function () {
 
     /**
      * Отдает текущий элемент массива
+     * @returns {*}
      */
     Iterator.prototype.current = function () {
         return this._items[this._cursor];
     };
 
     /**
-     * Сдвигает курсор в начальное положение и отдает первый элемент массива
+     * Сдвигает курсор в начальное положение и отдает первый элемент массив
+     * @returns {*}
      */
     Iterator.prototype.first = function () {
         this.reset();
@@ -26,6 +28,7 @@ var Iterator = (function () {
 
     /**
      * Сдвигает курсор на один шаг вперед и отдает элемент массива
+     * @returns {*}
      */
     Iterator.prototype.next = function () {
         if (this.hasNext()) {
@@ -36,6 +39,7 @@ var Iterator = (function () {
 
     /**
      * Сдвигает курсор на одни шаг назад и отдает элемент массива
+     * @returns {*}
      */
     Iterator.prototype.previous = function () {
         if (this.hasPrevious()) {
@@ -62,7 +66,7 @@ var Iterator = (function () {
 
     /**
      * Проверяет есть ли после текущего элемента еще один элемент
-     * @returns {boolean}
+     * @returns {boolean} Истина/ложь
      */
     Iterator.prototype.hasNext = function () {
         return this._cursor < this._items.length;
@@ -70,7 +74,7 @@ var Iterator = (function () {
 
     /**
      * Проверяет есть ли перед текущим элементом еще один элемент
-     * @returns {boolean}
+     * @returns {boolean} Истина/ложь
      */
     Iterator.prototype.hasPrevious = function () {
         return this._cursor > 0;
@@ -78,7 +82,7 @@ var Iterator = (function () {
 
     /**
      * Проходит по массиву и для каждого из его элементов выполняет функцию callback
-     * @param callback Функция, которая будет выполнена для каждого элемента
+     * @param {function} callback Функция, которая будет выполнена для каждого элемента
      */
     Iterator.prototype.each = function (callback) {
         var item = this.first();
