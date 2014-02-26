@@ -34,7 +34,7 @@
 4. Шаблоны корпоративных приложений / Enterprise patterns
     + [Реестр / Registry] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/enterprise/registry)
     + Репозиторий / Repository
-    + Запрос/Ответ / Request/Response
+    + [Запрос/Ответ / Request/Response] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/enterprise/reqres)
 5. Прочие - отсортировать
     + Единая точка входа / Front Controller
     + Sandbox / Песочница
