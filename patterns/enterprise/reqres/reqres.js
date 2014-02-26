@@ -84,6 +84,9 @@ var Server = (function () {
     /**
      * @param {RequestResponse} reqres Экзампляр хранителя запросов
      * @constructor
+     *
+     * В сервер инжектирован экзепмляр RequestResponse
+     * Сервер не знает кто к нему обращается
      */
     function Server(reqres) {
         this._reqres = reqres;
@@ -110,12 +113,41 @@ var Server = (function () {
 })();
 
 /**
+ * Клиент
+ * */
+var Client = (function () {
+
+    /**
+     * @param {RequestResponse} reqres Экзампляр хранителя запросов
+     * @constructor
+     *
+     * В клиент инжектирован экзепмляр RequestResponse
+     * Клиент ничего не знает о сервере
+     */
+    function Client(reqres) {
+        this._reqres = reqres;
+    }
+
+    /**
+     * Выполняет группу запросов
+     */
+    Client.prototype.run = function () {
+        console.log('Add: ' + this._reqres.request('add', { x: 22, y: 3 })); // => 25
+        console.log('Subtract: ' + this._reqres.request('subtract', { x: 4, y: 3 })); // => 1
+        console.log('Multiply: ' + this._reqres.request('multiply', { x: 9, y: 8 })); // => 72
+        console.log('Divide: ' + this._reqres.request('divide', { x: 192, y: 3 })); // => 64
+    };
+
+    return Client;
+})();
+
+
+
+/**
 * Пример использования
 * */
 var reqres = new RequestResponse(),
-    server = new Server(reqres);
+    server = new Server(reqres),
+    client = new Client(reqres);
 
-console.log('Add: ' + reqres.request('add', { x: 22, y: 3 })); // => 25
-console.log('Subtract: ' + reqres.request('subtract', { x: 4, y: 3 })); // => 1
-console.log('Multiply: ' + reqres.request('multiply', { x: 9, y: 8 })); // => 72
-console.log('Divide: ' + reqres.request('divide', { x: 192, y: 3 })); // => 64
+client.run();
