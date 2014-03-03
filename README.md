@@ -26,7 +26,7 @@
     + [Наблюдатель / Observer / Publisher-Subscriber] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/behavioral/observer)
     + Посетитель / Visitor
     + [Посредник / Mediator | Без тестов] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/behavioral/mediator)
-    + Состояние / State
+    + [Состояние / State] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/behavioral/state)
     + [Стратегия / Strategy] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/behavioral/strategy)
     + [Хранитель / Memento] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/behavioral/memento)
     + [Цепочка обязаностей / Chain of Responsibility] (https://github.com/instanceofpro/javascript-design-patterns/tree/master/patterns/behavioral/chain-of-responsibility)
