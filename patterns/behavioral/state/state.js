@@ -9,6 +9,11 @@ var Calculator = (function () {
      * @constructor
      */
     function Calculator(state) {
+        /**
+         * Хранит в себе текущий объект-состояние, методы которого будут вызываться
+         * @type {Object}
+         * @private
+         */
         this._state = state;
     }
 
