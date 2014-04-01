@@ -49,11 +49,11 @@ var Mediator = (function () {
      */
     Mediator.prototype.off = function(channel, withNested) {
         if (this.has(channel)) {
-            var channel = this.namespace(channel);
-            channel.handlers = [];
+            var ch = this.namespace(channel);
+            ch.handlers = [];
 
             if (withNested) {
-                channel.nested = {};
+                ch.nested = {};
             }
         }
 
@@ -62,21 +62,67 @@ var Mediator = (function () {
 
     /**
      * Вызывает обработчики для конкретного канала с передачей в них данных
+     * @private
      * @this {Mediator}
-     * @param {string} channel Канал, обработчики которого будут вызваны
+     * @param {array} handlers Массив с обработчиками
+     * @param {object} data Объект с данными, который будет передан в качестве аргумента в обработчики
+     * @returns {object} Ссылка на объект-медиатор для цепочки вызовов
+     */
+    Mediator.prototype._runHandlers = function(handlers, data) {
+        for (var length = handlers.length, i = 0; i < length; i++) {
+            handlers[i].fn.call(handlers[i].context, data);
+        }
+
+        return this;
+    };
+
+    /**
+     * Рекурсивно вызывает обработчики с передачей в них данных
+     * @private
+     * @this {Mediator}
+     * @param {object} namespace Пространство имен
+     * @param {object} data Объект с данными, который будет передан в качестве аргумента в обработчики
+     * @returns {object} Ссылка на объект-медиатор для цепочки вызовов
+     */
+    Mediator.prototype._runHandlersRecursive = function(namespace, data) {
+        this._runHandlers(namespace.handlers, data);
+
+        for (var ns in namespace.nested) {
+            if (namespace.nested.hasOwnProperty(ns)) {
+                this._runHandlersRecursive(namespace.nested[ns], data);
+            }
+        }
+
+        return this;
+    }
+
+    /**
+     * Вызывает обработчики для конкретного канала с передачей в них данных
+     * @this {Mediator}
+     * @param {string} channel Имя канала
      * @param {object} data Объект с данными, который будет передан в качестве аргумента в обработчики
      * @returns {object} Ссылка на объект-медиатор для цепочки вызовов
      */
     Mediator.prototype.trigger = function(channel, data) {
         if (this.has(channel)) {
-            var handlers = this.namespace(channel).handlers,
-                length = handlers.length,
-                i = 0;
+            this._runHandlers(this.namespace(channel).handlers, data);
+        } else {
+            throw new Error('The channel does not exist!');
+        }
 
-            for (; i < length; i++) {
-                handlers[i].fn.call(handlers[i].context, data);
-            }
+        return this;
+    };
 
+    /**
+     * Вызывает обработчики для конкретного канала и вложенных каналов с передачей в них данных
+     * @this {Mediator}
+     * @param {string} channel Имя канала
+     * @param {object} data Объект с данными, который будет передан в качестве аргумента в обработчики
+     * @returns {object} Ссылка на объект-медиатор для цепочки вызовов
+     */
+    Mediator.prototype.broadcast = function (channel, data) {
+        if (this.has(channel)) {
+            this._runHandlersRecursive(this.namespace(channel), data);
         } else {
             throw new Error('The channel does not exist!');
         }
