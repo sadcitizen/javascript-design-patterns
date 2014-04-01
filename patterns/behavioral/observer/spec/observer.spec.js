@@ -44,9 +44,7 @@ describe('Наблюдатель / Observer / Publisher-Subscriber', function ()
 
         it('Добавление обработчика с данными', function () {
 
-            var obj = {
-                text: 'Hello'
-            };
+            var obj = { text: 'Hello' };
 
             observer
                 .subscribe(firstFn)
