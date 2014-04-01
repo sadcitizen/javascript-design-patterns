@@ -35,6 +35,17 @@ My namespace is lorem
 My namespace is lorem:ipsum
 ```
 
+Вызовем все обработчики из неймспейса `lorem`:
+```js
+mediator.broadcast('lorem', { namespace: 'lorem' });
+```
+
+В консоли так же увидим:
+```js
+My namespace is lorem
+My namespace is lorem:ipsum
+```
+
 Удалим обработчики для неймспейса `lorem` с учетом вложенности:
 ```js
 mediator.off('lorem', true);
